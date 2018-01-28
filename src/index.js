@@ -15,11 +15,7 @@ function returnFirstArgument(arg) {
  Функция должна принимать два аргумента и возвращать сумму переданных значений
  Значение по умолчанию второго аргумента должно быть 100
  */
-function defaultParameterValue(a, b) {
-    if (!b) {
-        b = 100;
-    }
-    
+function defaultParameterValue(a, b = 100) {  
     return a + b;
 }
 
@@ -29,14 +25,8 @@ function defaultParameterValue(a, b) {
  Функция должна возвращать все переданные в нее аргументы в виде массива
  Количество переданных аргументов заранее неизвестно
  */
-function returnArgumentsArray() {
-    let arr = [];
-    
-    for (let i = 0; i < arguments.length; i++) {
-        arr.push(arguments[i]);
-    }
-
-    return arr;
+function returnArgumentsArray(...args) {
+    return [...args];
 }
 
 /*
@@ -54,12 +44,8 @@ function returnFnResult(fn) {
  Функция должна принимать число (значение по умолчанию - 0) и возвращать функцию (F)
  При вызове F, переданное число должно быть увеличено на единицу и возвращено из F
  */
-function returnCounter(number) {
-    if (!number)  {
-        number = 0;
-    }
-
-    return function F() {
+function returnCounter(number = 0) {
+    return function () {
         return ++number;
     }
 }

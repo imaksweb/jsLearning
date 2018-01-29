@@ -71,8 +71,8 @@ function isSomeTrue(array, fn) {
  - fn не является функцией (с текстом "fn is not a function")
  */
 function returnBadArguments(fn, ...args) {
-  if (typeof fn !== "function") {
-    throw new Error("fn is not a function");
+  if (typeof fn !== 'function') {
+    throw new Error('fn is not a function');
   }
 
   let resArr = [];
@@ -109,16 +109,10 @@ function calculator(number = 0) {
 
   return {
     sum(...args) {
-      args.forEach(function (elem) {
-        number += elem;
-      });
-      return number;
+      return number + args.reduce((sum, current) => sum + current);
     },
     dif(...args) {
-      args.forEach(function (elem) {
-        number -= elem;
-      });
-      return number;
+      return number - args.reduce((sum, current) => sum + current);
     },
     div(...args) {
       args.forEach(function (elem) {

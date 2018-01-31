@@ -1,4 +1,4 @@
-## LoftSchool example project
+## Изучение JavaScript
 
 ### Доступные команды
 
